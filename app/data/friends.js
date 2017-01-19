@@ -1,4 +1,5 @@
-var friends = 
+//potential friend, photos and scores
+var friendsArray = 
 [
   {
     "name":"Batman",
@@ -70,3 +71,5 @@ var friends =
   }
 
 ];
+
+module.exports = friendsArray;
