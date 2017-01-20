@@ -24,6 +24,10 @@ module.exports = function(app)
 			//console.log(userResults);
 		}
 
+		var closestFriendIndex = 0;
+
+		var closestFriendDiff = 99999;
+
 		//go through friends array
 		for (var i = 0; i < friends.length; i++) 
 		{
@@ -32,9 +36,18 @@ module.exports = function(app)
 
 			console.log("Personal Diff" + personalDifference);
 
-			
-
+			if (personalDifference < closestFriendDiff)
+			{
+				//set index to i
+				closestFriendIndex = i;
+				closestFriendDiff = personalDifference;
+			}
+	
 		}
+
+
+
+		res.send(friends[closestFriendIndex]);
 
 /* With that done, compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the totalDifference.
 Example:
@@ -61,7 +74,7 @@ The closest match will be the user with the least amount of difference.
 			return totalDifference;
 		}
 
-		res.send(friends[i]);
+	
 		
 	});
 };
