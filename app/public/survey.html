@@ -238,7 +238,7 @@
 	    	var currentURL = window.location.origin;
 
 	    	// AJAX post the data to the friends API. 
-	    	$.post(currentURL + "/api/survey", userData, function(data)
+	    	$.post(currentURL + "/api/friends", userData, function(data)
 	    	{
 
 	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
@@ -257,14 +257,14 @@
     	
     	return false;
     });
-
+/*
     $('#closeModal').click(function() 
     {
 	    $.get('/',function(req,res)
 	    {
 	    	location.replace(res);
     	})
-	});
+	});/*
 
 
   </script>

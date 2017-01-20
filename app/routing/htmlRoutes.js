@@ -3,16 +3,17 @@ var path = require('path');
 module.exports = function (app) 
 {
 
-	app.use('/', function(req, res) 
+// go to survey.html page
+	app.get("/survey", function(req, res) 
 	{
-		res.sendFile(path.join(__dirname + '/../public/home.html'));
+		res.sendFile(path.join(__dirname + "/../public/survey.html"));
 	});
 
-	app.get('/survey', function(req, res) 
+	// every other url path goes to the home.html page
+	app.use(function(req, res) 
 	{
-		res.sendFile(path.join(__dirname + '/../public/survey.html'));
+		res.sendFile(path.join(__dirname + "/../public/home.html"));
 	});
-
 
 	app.use('*', function(req, res) 
 	{
